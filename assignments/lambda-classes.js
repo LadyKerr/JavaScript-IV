@@ -13,8 +13,8 @@ class Person {
     };
 };
 
-//Child
-class Instructor extends Person {
+//extend from Person
+class Instructors extends Person {
     constructor(instructAttrs) {
         super(instructAttrs);
         this.specialty = instructAttrs.specialty;
@@ -24,7 +24,43 @@ class Instructor extends Person {
     demo(subject) {
         console.log(`Today we are learning about ${subject}.`);
     }
-    grade(studentObj, subject) {
+    grade(student, subject) {
         console.log(`${student.name} receives a perfect score of ${subject}.`);
     };
 };
+
+//Extending from Person
+class Student extends Person {
+    constructor(studAttrs) {
+        super(studAttrs);
+        this.previousBackground = studAttrs.previousBackground;
+        this.className = studAttrs.className;
+        this.favSubjects = studAttrs.favSubjects;
+    }
+    listsSubject(subject) {
+        console.log(favSubjects);
+    }
+    PRAssignment(subject) {
+        console.log(`${this.name} has submitted a PR for ${subject}.`);
+    }
+    sprintChallenge(subject) {
+        console.log(`${this.name} has begun sprint challenge on {subject}.`);
+    };
+};
+
+//Extending from Instructor
+class ProjectManagers extends Instructors {
+    constructor(pMAttrs) {
+        super(pMAttrs);
+        this.gradClassName = pMAttrs.gradClassName;
+        this.favInstructor = pMAttrs.favInstructor;
+    }
+    standUp(channel) {
+        console.log(`${this.name} announces to ${channel}, @channel standy times!`);
+    }
+    debugsCode(student, subject) {
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
+    };
+};
+
+
