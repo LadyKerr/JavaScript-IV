@@ -13,6 +13,25 @@ class Person {
     };
 };
 
+//Person Objects
+const Taylor = new Person ({
+    name: 'Taylor',
+    age: 25,
+    location: 'Australia',
+    gender: 'Female'
+});
+console.log(Taylor);
+console.log(Taylor.speak());
+
+const Alexis = new Person({
+    name: 'Alexis',
+    age: 30,
+    location: 'California',
+    gender: 'Female'
+});
+console.log(Alexis);
+console.log(Alexis.speak());
+
 //extend from Person
 class Instructors extends Person {
     constructor(instructAttrs) {
