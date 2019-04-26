@@ -40,7 +40,12 @@ class Instructors extends Person {
     grade(student, subject) {
         console.log(`${student} receives a perfect score on ${subject}.`);
     };
+    CheckGrade(student) {
+        const num = Math.floor((Math.random() * 10) + 5);
+        student.grade = student.grade + num;
+    }
 };
+
 
 //Instructor Objects
 const shavel = new Instructors ({
@@ -69,6 +74,7 @@ class Student extends Person {
         this.previousBackground = studAttrs.previousBackground;
         this.className = studAttrs.className;
         this.favSubjects = studAttrs.favSubjects;
+        this.grade = studAttrs.grade;
     }
     listsSubjects() {
         console.log(`${this.favSubjects}`);
@@ -89,7 +95,8 @@ const kira = new Student ({
     gender: 'female',
     previousBackground: 'Social Work',
     className: 'Web16',
-    favSubjects: ['HTML', 'CSS', 'Phython']
+    favSubjects: ['HTML', 'CSS', 'Phython',],
+    grade: 85
 });
 
 const olivea = new Student ({
@@ -99,7 +106,8 @@ const olivea = new Student ({
     gender: 'non-binary',
     previousBackground: 'Customer Service',
     className: 'Web16',
-    favSubjects: ['C++', 'PHP', 'Swift']
+    favSubjects: ['C++', 'PHP', 'Swift',],
+    grade: 75
 });
 
 class ProjectManagers extends Instructors {
@@ -167,4 +175,7 @@ console.log(flo.standUp('Web16'));
 console.log(mon.debugsCode('Kira', 'Python'));
 console.log(flo.debugsCode('Olivea', 'JavaScript'));
 
+console.log(kira.grade);
+shavel.CheckGrade(kira);
+console.log(kira.grade);
 
