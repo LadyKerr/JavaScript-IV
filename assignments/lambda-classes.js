@@ -46,7 +46,6 @@ class Instructors extends Person {
     }
 };
 
-
 //Instructor Objects
 const shavel = new Instructors ({
     name: 'Shavel',
@@ -85,6 +84,13 @@ class Student extends Person {
     sprintChallenge(subject) {
         console.log(`${this.name} has begun sprint challenge on ${subject}.`);
     };
+    graduate() {
+        if (this.grade >= 70) {
+            console.log(`CONGRATS ${this.name}! You made it to graduation!!`);
+        } else {
+            console.log(`Keep working on your sprint challenges ${this.name}`);
+        }
+    }
 };
 
 //Student Objects
@@ -175,7 +181,9 @@ console.log(flo.standUp('Web16'));
 console.log(mon.debugsCode('Kira', 'Python'));
 console.log(flo.debugsCode('Olivea', 'JavaScript'));
 
+//stretch
 console.log(kira.grade);
 shavel.CheckGrade(kira);
 console.log(kira.grade);
-
+console.log(olivea.graduate());
+console.log(kira.graduate());
